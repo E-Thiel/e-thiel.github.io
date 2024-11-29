@@ -1,0 +1,120 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+body {
+    padding: 30px;
+    text-align:center;
+    align-items: center;
+}
+
+.board {
+    display:grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px;
+    height: 500px;
+    width: 500px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cell {
+    border: 3px solid #000;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    font-size: 100px;
+    cursor: pointer;
+}
+
+.cell:hover {
+    background-color: rgb(228, 233, 239);
+    transition:150ms;
+}
+
+.message {
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+button.restart {
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: white;
+    box-shadow: none;
+    border: solid black 2px;
+    border-radius: 30px;
+    cursor: pointer;
+    position: relative;
+    
+}
+
+button.restart:hover {
+    background-color: rgb(228, 233, 239);
+    transition:150ms;
+}
+
+.jump-up {
+    animation: jump 0.7s;
+  animation-timing-function: ease-out;
+}
+
+.reminder-thing {
+    animation: reminder 0.7s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes reminder{
+    0% {bottom: 0px;}
+    25% {color: rgb(19, 118, 238);}
+    100% {color: rgb(0,0,0);}
+
+}
+
+@keyframes jump {
+    0% {bottom: 0px;}
+    25% {bottom: 10px; color: rgb(19, 118, 238); border-color:  rgb(19, 118, 238);}
+    75% {bottom: -5px;}
+    100% {bottom:0px; color: rgb(0,0,0); border-color:  rgb(0,0,0);}
+}  
+
+.oh-shit {
+    border-color: red;
+    color: red;
+    width: 110%;
+    height: 110%;
+    animation: shit 150ms infinite;
+    position:relative;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    padding-bottom: 20px;
+    transition: 0s;
+    font-size: 80px;
+}
+
+.now-youve-done-it {
+    color: red;
+    position:relative;
+    animation: done-it 90ms infinite;
+}
+
+@keyframes done-it {
+    0% {left: -1px;}
+    100% {left:5px;}
+}
+
+@keyframes shit {
+0% {width:100%; height:100%; top:0px;}
+15% {width:97%; height:97%; top:10px;}
+85% {width:101%; height:101%; top:-10px;}
+100% {width:100%; height:100%; top:0px}
+}
